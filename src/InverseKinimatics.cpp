@@ -16,13 +16,17 @@ void InverseKinimatics::moveTo(float x, float y){
 
     float length = sqrt( (pow(x,2)) + (pow(y,2)) );
 
+    triangleAngle = toDegrees( atan(y/x));
+
     //cosine law to find angle in raidans and all inside toDegrees
     hipAngle = toDegrees(acos((pow(femur, 2) + pow(length, 2) - pow(calf, 2)) / (2 * femur * length)));
 
     kneeAngle = toDegrees(acos((pow(femur, 2) + pow(calf, 2) - pow(length, 2)) / (2 * femur * calf)));
 
+    finalAngle = hipAngle + triangleAngle;
+
     
-        hipServo.write(hipAngle);   
+        hipServo.write(finalAngle);   
         kneeServo.write(kneeAngle);
     
 }
