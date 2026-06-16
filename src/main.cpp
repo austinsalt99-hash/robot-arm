@@ -27,7 +27,7 @@ yPot = pot2;
 map(xPot, 0, 4095, -10, 10);
 map(yPot, 0, 4095, 0, -10);
 
-hello
+just updated
 ManualLength = sqrt( (pow(xx,2)) * (pow(yy,2)) );
 
 if(L<=100){
